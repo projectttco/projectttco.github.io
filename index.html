@@ -425,7 +425,16 @@
       :root { --pad: 28px; }
       .site-nav { top: 10px; width: calc(100% - 32px); }
       .hero { padding-top: 112px; }
-      .hero-title { font-size: clamp(54px, 18vw, 92px); }
+      .hero-title {
+        max-width: 100%;
+        font-size: clamp(48px, 13.2vw, 60px);
+        line-height: .94;
+        letter-spacing: -.065em;
+      }
+      .hero-line {
+        padding-inline: 0;
+        margin-inline: 0;
+      }
       .hero-copy { max-width: 100%; margin-top: 32px; font-size: 17px; }
       .section { padding-block: 88px; }
       .section-label { margin-bottom: 40px; }
