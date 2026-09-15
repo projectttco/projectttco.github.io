@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "brand_version": "1.0",
+  "sources": [
+    "BRAND_GUIDELINES.md",
+    "BRAND_TOKENS.json",
+    "MOTION.md",
+    "VISUAL_GUIDE_V1_SCOPE.md"
+  ],
+  "identity": {
+    "formal_name": "Projecttt Co.",
+    "wordmark": "projecttt",
+    "prose": "Projecttt",
+    "display": "PROJECTTT",
+    "compact": "ttt",
+    "descriptor": "Independent Product & Systems Studio",
+    "hero": "Building things that give time back."
+  },
+  "identity_rules": {
+    "compact_is_master_logo": false,
+    "clear_space": "not-yet-specified",
+    "minimum_size": "not-yet-specified",
+    "decorative_accent": "not-required"
+  },
+  "colors": [
+    {"id":"paper","token":"color.primitive.paper","hex":"#F7F7F2","alpha":1,"description":"Warm off-white baseline (#F7F7F2)."},
+    {"id":"ink","token":"color.primitive.ink","hex":"#111111","alpha":1,"description":"Near-black baseline (#111111)."},
+    {"id":"muted","token":"color.primitive.muted","hex":"#686864","alpha":1,"description":"Primary muted neutral (#686864)."},
+    {"id":"panel-muted","token":"color.primitive.panel-muted","hex":"#A6A6A0","alpha":1,"description":"Muted neutral for inverse/dark surfaces (#A6A6A0)."},
+    {"id":"ink-12","token":"color.primitive.ink-12","hex":"#111111","alpha":0.12,"description":"Near-black at 12% alpha; established hairline baseline."}
+  ],
+  "typography": {
+    "family": {
+      "sans": ["-apple-system","BlinkMacSystemFont","SF Pro Display","SF Pro Text","Segoe UI","Helvetica","Arial","sans-serif"],
+      "mono": ["ui-monospace","SFMono-Regular","SF Mono","Menlo","Consolas","Liberation Mono","monospace"]
+    },
+    "weights": {"regular":400,"medium":500,"semibold":600},
+    "sizes": {"caption":"0.75rem","label":"0.8125rem","body-small":"0.875rem","body":"1rem","body-large-min":"18px","body-large-max":"22px","title-small-min":"23px","title-small-max":"32px","title-medium-min":"30px","title-medium-max":"48px","display-min":"46px","display-max":"112px"},
+    "line_height": {"caption":1.4,"label":1.35,"body-small":1.5,"body":1.5,"body-large":1.45,"title-small":1.1,"title-medium":1.05,"display":0.94}
+  },
+  "spacing": [
+    {"token":"space.1","value":"4px"},{"token":"space.2","value":"8px"},{"token":"space.3","value":"12px"},{"token":"space.4","value":"16px"},{"token":"space.5","value":"24px"},{"token":"space.6","value":"32px"},{"token":"space.7","value":"48px"},{"token":"space.8","value":"64px"},{"token":"space.9","value":"96px"},{"token":"space.10","value":"160px"}
+  ],
+  "radius": {"none":"0px","small":"4px","medium":"8px","large":"12px","full":"9999px"},
+  "border_width": {"default":"1px","strong":"2px"},
+  "motion": {"duration":{"fast":"120ms","standard":"220ms","slow":"400ms"},"easing":"cubic-bezier(0.22, 1, 0.36, 1)","reduced_motion_required":true},
+  "layout": {"editorial_max_width":"1320px","horizontal_padding":"clamp(22px, 4vw, 64px)"}
+}
