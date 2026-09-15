@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projecttt portfolio map">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Projecttt Portfolio Map</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./enhancements.css">
+</head>
+<body>
+  <div class="app-shell" data-app-state="loading">
+    <header class="topbar">
+      <a class="brand" href="#map" aria-label="Projecttt Portfolio Map home">projecttt</a>
+
+      <nav class="view-nav" aria-label="Portfolio views">
+        <button class="nav-button is-active" type="button" data-view-target="map" aria-pressed="true">Map</button>
+        <button class="nav-button" type="button" data-view-target="portfolio" aria-pressed="false">Portfolio</button>
+        <button class="nav-button" type="button" data-view-target="ecosystem" aria-pressed="false">Ecosystem</button>
+      </nav>
+
+      <div class="verification-summary" id="verificationSummary" aria-live="polite">Loading snapshot</div>
+    </header>
+
+    <section class="toolbar" aria-label="Portfolio controls">
+      <label class="search-field">
+        <span class="sr-only">Search projects, workstreams, and ecosystem</span>
+        <input id="searchInput" type="search" placeholder="Search portfolio" autocomplete="off">
+      </label>
+
+      <label class="compact-field">
+        <span>Status</span>
+        <select id="statusFilter">
+          <option value="">All</option>
+        </select>
+      </label>
+
+      <label class="compact-field">
+        <span>Priority</span>
+        <select id="priorityFilter">
+          <option value="">All</option>
+        </select>
+      </label>
+
+      <label class="toggle-field">
+        <input id="ecosystemToggle" type="checkbox">
+        <span>Ecosystem context</span>
+      </label>
+
+      <button id="resetButton" class="quiet-button" type="button">Reset</button>
+    </section>
+
+    <main class="main-area">
+      <section id="mapView" class="view-panel is-active" data-view="map" aria-label="Portfolio map">
+        <div class="map-copy">
+          <p class="eyebrow">Portfolio map</p>
+          <h1>A clearer view of the work.</h1>
+          <p class="intro">Thirteen primary projects, their workstreams, and the systems around them. Operational status and technical evidence remain separate.</p>
+        </div>
+
+        <div class="map-frame" id="mapFrame">
+          <svg class="relationship-layer" id="relationshipLayer" aria-hidden="true"></svg>
+          <div class="map-stage" id="mapStage" role="list" aria-label="Primary projects"></div>
+          <div class="map-empty" id="mapEmpty" hidden>No projects match the current filters.</div>
+        </div>
+      </section>
+
+      <section id="portfolioView" class="view-panel" data-view="portfolio" aria-label="Portfolio list" hidden>
+        <header class="section-header">
+          <p class="eyebrow">Portfolio</p>
+          <h1>Projects</h1>
+          <p>Compact operational view of the same generated snapshot.</p>
+        </header>
+        <div class="portfolio-list" id="portfolioList"></div>
+      </section>
+
+      <section id="ecosystemView" class="view-panel" data-view="ecosystem" aria-label="Ecosystem catalog" hidden>
+        <header class="section-header">
+          <p class="eyebrow">Ecosystem</p>
+          <h1>Tools and systems</h1>
+          <p>Reusable platforms, services, runtimes, and capabilities referenced by the portfolio.</p>
+        </header>
+        <div class="ecosystem-status" id="ecosystemStatus"></div>
+        <div class="ecosystem-grid" id="ecosystemGrid"></div>
+      </section>
+    </main>
+
+    <aside class="detail-drawer" id="detailDrawer" aria-label="Project details" aria-hidden="true">
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="Close project details">Close</button>
+      <div id="drawerContent"></div>
+    </aside>
+
+    <div class="loading-state" id="loadingState" role="status">Loading portfolio snapshot</div>
+    <div class="error-state" id="errorState" role="alert" hidden>
+      <strong>Portfolio data could not be loaded.</strong>
+      <span>Build <code>portfolio.snapshot.json</code> before running the frontend.</span>
+    </div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./enhancements.js"></script>
+</body>
+</html>
