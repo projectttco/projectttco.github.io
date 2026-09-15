@@ -1,0 +1,177 @@
+.map-viewport-controls {
+  position: absolute;
+  z-index: 8;
+  right: 18px;
+  bottom: 18px;
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--paper) 96%, transparent);
+  overflow: hidden;
+}
+
+.map-viewport-controls button {
+  min-width: 38px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 0;
+  border-right: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 13px;
+  transition: background var(--motion-fast) var(--ease), color var(--motion-fast) var(--ease);
+}
+
+.map-viewport-controls button:last-child { border-right: 0; }
+.map-viewport-controls button:hover { background: rgba(17, 17, 17, .05); }
+.map-viewport-controls .map-zoom-readout { min-width: 58px; color: var(--muted); font-size: 12px; }
+.map-viewport-controls .map-download-action { min-width: 82px; }
+
+.map-frame.is-interactive-map {
+  cursor: grab;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+.map-frame.is-interactive-map.is-panning { cursor: grabbing; user-select: none; }
+
+.workstream-object {
+  position: absolute;
+  z-index: 3;
+  width: clamp(112px, 10vw, 148px);
+  min-height: 46px;
+  padding: 8px 0 7px;
+  transform: translate(-50%, -50%);
+  border-top: 1px solid rgba(17, 17, 17, .18);
+  color: var(--muted);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  outline: none;
+}
+
+.workstream-object:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.workstream-name {
+  display: block;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.workstream-status {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.relationship-line.workstream-relationship {
+  stroke: rgba(17, 17, 17, .34);
+  stroke-width: 1;
+}
+
+.workstream-map-toggle,
+.drawer-map-download {
+  margin-top: 14px;
+  padding: 7px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(247,247,242,.28);
+  border-radius: 0;
+  background: transparent;
+  color: var(--paper);
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.workstream-map-toggle:hover,
+.drawer-map-download:hover { border-color: rgba(247,247,242,.62); }
+
+.workstream-map-toggle + .drawer-map-download { margin-left: 18px; }
+
+.ecosystem-logo {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  color: currentColor;
+  fill: currentColor;
+}
+
+.ecosystem-object .ecosystem-logo { color: var(--ink); opacity: .78; }
+
+.ecosystem-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ecosystem-card-heading .ecosystem-logo {
+  width: 15px;
+  height: 15px;
+  flex-basis: 15px;
+  color: var(--ink);
+}
+
+.ecosystem-card-heading h2 { margin: 0; }
+
+@media (max-width: 760px) {
+  .map-frame {
+    height: clamp(520px, 68svh, 760px);
+    min-height: 520px;
+    overflow: hidden;
+  }
+
+  .relationship-layer { display: block; }
+
+  .map-stage {
+    position: absolute;
+    inset: auto;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 1120px;
+    height: 760px;
+    padding: 0;
+    transform-origin: 0 0;
+  }
+
+  .project-node {
+    position: absolute;
+    width: 180px;
+    min-height: 76px;
+    padding: 10px 0 9px;
+    transform: translate(-50%, -50%);
+  }
+
+  .project-node.is-muted { opacity: 1; }
+  .ecosystem-object { display: flex; }
+  .workstream-object { display: block; width: 142px; }
+
+  .map-viewport-controls {
+    display: inline-flex;
+    left: 10px;
+    right: auto;
+    bottom: 10px;
+    max-width: calc(100% - 20px);
+  }
+
+  .map-viewport-controls button {
+    min-width: 34px;
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .map-viewport-controls .map-zoom-readout { min-width: 50px; }
+  .map-viewport-controls .map-download-action { min-width: 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-viewport-controls button { transition: none; }
+}
